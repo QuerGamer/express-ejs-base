@@ -1,0 +1,41 @@
+{
+  "name": "express-ejs-base",
+  "version": "1.0.0",
+  "description": "Basic template for a express ejs web app",
+  "main": "main.js",
+  "scripts": {
+    "start": "node ./main.js",
+    "dev": "nodemon ./main.js --config nodemon.json" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuerGamer/express-ejs-base.git"
+  },
+  "author": "QuerGamerTV",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QuerGamer/express-ejs-base/issues"
+  },
+  "homepage": "https://github.com/QuerGamer/express-ejs-base#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cache-manager": "^2.11.1",
+    "chalk": "^4.1.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "express": "^4.18.0",
+    "express-cache-middleware": "^1.0.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-rate-limit": "^6.4.0",
+    "express-session": "^1.17.2",
+    "express-slow-down": "^1.4.0",
+    "morgan": "^1.10.0",
+    "selfsigned": "^2.0.1",
+    "sematext-agent-express": "^2.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
