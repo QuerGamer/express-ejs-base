@@ -30,7 +30,7 @@ if ((process.env.CORS_ENABLE || "true") == "true") {
         "origin": (process.env.CORS_ORIGIN || "*"),
         "methods": (process.env.CORS_METHODES || "GET,HEAD,PUT,PATCH,POST,DELETE"),
         "preflightContinue": (process.env.CORS_PREFLIGHT_CONTINUE || false),
-        "optionsSuccessStatus": (process.env.CORS_OPTIONS_SUCCESS_STATUS || 204)
+        "optionsSuccessStatus": parseInt((process.env.CORS_OPTIONS_SUCCESS_STATUS || 204))
     }))
 }
 
@@ -54,7 +54,7 @@ if ((process.env.CACHE_ENABLE || "true") == "true") {
 
     const cacheMiddleware = new ExpressCache(
         cacheManager.caching({
-            store: 'memory', max: (process.env.CACHE_MAX || 10000), ttl: (process.env.CACHE_TTL || 3600)
+            store: 'memory', max: parseInt((process.env.CACHE_MAX || 10000)), ttl: parseInt((process.env.CACHE_TTL || 3600))
         })
     )
 
@@ -140,7 +140,7 @@ if ((process.env.SSL_GENERATE || "false") == "true") {
     generatessl()
 }
 
-if ((process.env.HTTPS_ENABLE || "true")== "true") {
+if ((process.env.HTTPS_ENABLE || "true") == "true") {
     var privateKey = fs.readFileSync("./ssl/key.pem", "utf8");
     var certificate = fs.readFileSync("./ssl/cert.pem", "utf8");
 
